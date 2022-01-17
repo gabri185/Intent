@@ -21,10 +21,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.realtime)
 
 
-        database = Firebase.database.reference
+        database = Firebase.database.getReference("")
 
         //boton para escribir
         val miBoton: Button = findViewById(R.id.miBoton)
