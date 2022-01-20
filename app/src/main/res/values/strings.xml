@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Intent</string>
+    <string name="Txtemail">Ingresa tu correo</string>
+    <string name="Txtcon">Ingresa tu contraseña</string>
+    <string name="boton">REGISTRAR USUARIO</string>
 </resources>

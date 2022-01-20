@@ -1,5 +1,6 @@
 package com.pmdm.intent
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -21,10 +22,21 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.realtime)
+        setContentView(R.layout.activity_main)
 
 
-        database = Firebase.database.getReference("")
+        val mLogin: Button = findViewById(R.id.bLogin)
+        val mRegister: Button = findViewById(R.id.bRegister)
+
+        mLogin.setOnClickListener() {
+            Loguearse()
+        }
+        mRegister.setOnClickListener() {
+            Registrarse()
+        }
+
+        /*
+        database = Firebase.database("https://agarimo-241c2-default-rtdb.firebaseio.com/").reference
 
         //boton para escribir
         val miBoton: Button = findViewById(R.id.miBoton)
@@ -53,14 +65,24 @@ class MainActivity : AppCompatActivity() {
         }
         database.addValueEventListener(datoListener)
 
-
+*/
     }
-
+/*
     fun  writeNewData(userId: String, nombre:String, latitud: Double, longitud: Double){
 
         Log.d(TAG, "Escribiendo datos")
         val user = Profesionales(nombre, latitud, longitud)
 
-        database.child(userId).setValue(user)
+        database.child("Profesionales").child(userId).setValue(user)
     }
+*/
+    private fun Registrarse() {
+        val intent = Intent(this, Registrarse::class.java)
+        startActivity(intent)
+    }
+    private fun Loguearse() {
+        val intent2 = Intent(this, Loguearse::class.java)
+        startActivity(intent2)
+    }
+
 }
